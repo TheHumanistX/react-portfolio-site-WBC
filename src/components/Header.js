@@ -21,20 +21,20 @@ const Header = () => {
               </motion.li>
               <motion.li
               initial={{ y: '-200px' }}
-              animate={{ y: 0, transition: {delay: 0.2}}}
+              animate={{ y: 0, transition: {delay: 0.3}}}
               >
                 <NavLink to="/About" className="bold uppercase white">About<div className="underline"></div></NavLink>
               </motion.li>
               <motion.li
               initial={{ y: '-200px' }}
-              animate={{ y: 0, transition: {delay: 0.3}}}
+              animate={{ y: 0, transition: {delay: 0.5}}}
               
               >
                 <NavLink to="/Portfolio" className="bold uppercase white">Portfolio<div className="underline"></div></NavLink>
               </motion.li>
               <motion.li
               initial={{ y: '-200px' }}
-              animate={{ y: 0, transition: {delay: 0.4}}}
+              animate={{ y: 0, transition: {delay: 0.7}}}
               
               >
                 <NavLink to="/Contact" className="bold uppercase white">Contact<div className="underline"></div></NavLink>
