@@ -78,8 +78,8 @@ body {
   font-family: "Poppins", sans-serif;
   color: #333;
   background: linear-gradient(128.16deg,
-            rgba(222, 160, 160, 0.85) -3.04%,
-            rgba(222, 160, 160, 0) 57.36%) no-repeat;
+      rgba(222, 160, 160, 0.85) -3.04%,
+      rgba(222, 160, 160, 0) 57.36%) no-repeat;
 }
 
 a {
@@ -159,14 +159,14 @@ nav a:active {
 
 .underline {
   height: 5px;
-  background-color: rgba(222, 160, 160, 0.85); 
+  background-color: rgba(222, 160, 160, 0.85);
   transform: scale(0);
   transition: transform 300ms;
   transform-origin: bottom;
 }
 
-nav a:hover > .underline,
-.active > .underline {
+nav a:hover>.underline,
+.active>.underline {
   transform: scale(1);
 }
 
@@ -319,30 +319,131 @@ section.portfolio h2 {
   margin-bottom: 1rem;
 }
 
-.disable-checkboxes {
-  position: absolute;
-  display: none;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 2;
-  top: 0;
-  left: 0;
-}
+/* .project-card__container {
+  position: relative;
+} */
 
 .project-card {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
-  transition: transform 300ms, background-color 300ms;
   padding: 2rem 1rem;
   text-align: center;
   max-width: 575px;
+  cursor: pointer;
 }
 
-.project-card:hover {
+.backdrop {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  background: rgb(0, 0, 0, 0.9);
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+/* Framer Motion AnimatePresence styles */
+
+
+
+
+
+/* .project-card__container .backdrop {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  background: rgb(0, 0, 0, 0.9);
+  display: none;
+} */
+
+/* .project-card__container.open .backdrop {
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  z-index: 1;
+} */
+
+/* .project-card:hover {
   transform: scale(1.05);
   background-color: rgba(244, 244, 244, 0.3);
+} */
+
+/* .project-card__container.open .project-card:hover {
+  transform: scale(1);
+  background-color: rgb(0, 0, 0, 0.9);
+} */
+/* .project-card__container.open .project-card.one {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  z-index: 2;
+  max-width: 60vw;
+  max-height: 30vw;
+  background-color: #fff;
+  margin: auto;
 }
+
+.project-card__container.open .project-card.two {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  max-width: 80vw;
+  background-color: #fff;
+}
+
+.project-card__container.open .project-card.three {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  max-width: 80vw;
+  background-color: #fff;
+}
+
+.project-card__container.open .project-card.four {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  max-width: 80vw;
+  background-color: #fff;
+}
+
+.project-card__container.open .project-card.five {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  max-width: 80vw;
+  background-color: #fff;
+}
+
+.project-card__container.open .project-card.six {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  max-width: 80vw;
+  background-color: #fff;
+} */
 
 .project-card img {
   max-width: 100%;
