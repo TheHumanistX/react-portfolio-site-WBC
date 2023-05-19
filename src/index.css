@@ -70,16 +70,14 @@ h6 {
   text-align: center;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: "Poppins", sans-serif;
   color: #333;
   background: linear-gradient(128.16deg,
             rgba(222, 160, 160, 0.85) -3.04%,
-            rgba(222, 160, 160, 0) 57.36%) no-repeat;
+            rgba(222, 160, 160, 0) 57.36%),
+            rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* To hide horizontal scrollbar that may appear when the intro Home animations are running */
 }
 
 a {
@@ -95,16 +93,7 @@ a:hover {
 ul {
   list-style: none;
   padding: 0;
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: column;
-}
-
-header,
-section {
-  padding: 4rem 0;
+  margin: 0;
 }
 
 /* Header and Navigation */
@@ -112,27 +101,23 @@ section {
 header {
   height: 80px;
   background-color: #333;
-  padding: 0;
   position: sticky;
   top: 0;
   left: 0;
-  right: 0;
   z-index: 1000;
   display: flex;
   justify-content: center;
 }
 
 nav {
-  position: relative;
   display: flex;
-  justify-content: space-between;
+  position: relative;
   align-items: center;
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+nav:not(.nav__phone) > ul {
+  display: flex;
+  gap: 2rem;
 }
 
 nav ul li {
@@ -141,10 +126,9 @@ nav ul li {
 
 nav a {
   display: inline-block;
-  position: relative;
   padding: 0.5rem 1rem;
-  transition: color 300ms, transform 300ms, box-shadow 200ms;
   border-radius: 10px;
+  transition: color 300ms, transform 300ms, box-shadow 200ms;
 }
 
 nav a:hover {
@@ -174,19 +158,36 @@ nav a:hover > .underline,
   color: rgba(222, 160, 160, 0.85);
 }
 
+/* Smaller Screen Secondary Nav Menu */
+
+.nav__toggle,
+.nav__toggle-label,
+.nav__phone + h1 {
+    display: none;
+}
+
+.nav__phone {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    top: 100%;
+    left: 0;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+/* Styling All Sections (Home, About, Portfolio, Contact */
+
 section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 86vh;
   justify-content: center;
+  min-height: 86vh;
 }
 
 section.hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,6 +233,9 @@ section.hero a {
 /* About Section */
 
 section.about {
+  background: linear-gradient(128.16deg,
+            rgba(222, 160, 160, 0.85) -3.04%,
+            rgba(222, 160, 160, 0) 57.36%);
   gap: 1rem;
 }
 
@@ -304,7 +308,9 @@ section.about>ul a {
 
 section.portfolio {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(128.16deg,
+            rgba(222, 160, 160, 0.85) -3.04%,
+            rgba(222, 160, 160, 0) 57.36%);
 }
 
 section.portfolio h2 {
@@ -361,6 +367,12 @@ section.portfolio h2 {
 
 /* Contact Section */
 
+section.contact {
+  background: linear-gradient(128.16deg,
+            rgba(222, 160, 160, 0.85) -3.04%,
+            rgba(222, 160, 160, 0) 57.36%);
+}
+
 section.contact h2 {
   margin-bottom: 2rem;
 }
@@ -403,15 +415,109 @@ section.contact button:hover {
 /* Footer */
 
 footer {
+  display: flex;
+  justify-content: center;
+  gap: min(12rem, 6vw);
   padding: 1rem 0;
   background-color: #333;
 }
 
 footer a {
+  display: inline-block;
   margin: 0 0.5rem;
-  transition: color 300ms;
 }
 
-footer a:hover {
-  color: #ccc;
+footer span {
+  display: inline-block;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 900px) {
+  .about_info {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  header {
+      align-items: center;
+  }
+
+  .nav__phone + h1 {
+      display: block;
+  }
+
+  nav:not(.nav__phone) {
+      display: none;
+  }
+
+  .nav__phone {
+      display: block;
+      border-bottom-right-radius: 10px;
+  }
+
+
+  .nav__toggle:checked~.nav__phone {
+      transform: scale(1, 1);
+  }
+
+  .nav__toggle-label {
+      display: inline-block;
+      position: absolute;
+      left: 1rem;
+      top: 40px;
+      color: #fff;
+  }
+
+  .nav__toggle-label span,
+  .nav__toggle-label span::before,
+  .nav__toggle-label span::after {
+      display: block;
+      position: relative;
+      background-color: white;
+      height: 2px;
+      width: 2em;
+      border-radius: 2px;
+  }
+
+  .nav__toggle-label span::before,
+  .nav__toggle-label span::after {
+      content: '';
+      position: absolute;
+  }
+
+  .nav__toggle-label span::before {
+      top: -7px;
+  }
+
+  .nav__toggle-label span::after {
+      top: 7px;
+  }
+
+  .nav__phone>ul>li {
+      display: block;
+      margin-bottom: 1em;
+      margin-left: 1em;
+  }
+
+  .nav__phone a {
+      text-align: left;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 150ms ease-in-out;
+  }
+
+  .nav__toggle:checked~.nav__phone a {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 275ms;
+  }
+
+
+  .nav__phone a:hover {
+      color: #ccc;
+  }
 }

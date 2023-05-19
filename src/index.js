@@ -6,6 +6,7 @@ import { HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // Wrapping entire app in the HashRouter 
   <HashRouter>
   <React.StrictMode>
     <App />
