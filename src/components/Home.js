@@ -16,10 +16,10 @@ const Home = () => {
             
             <div class="home_container">
                 {/* The motion component from 'framer-motion' is used to animate the h1 tag. */}
-                {/* The 'initial' prop sets the initial state of the animation (70vw to the left of the normal position),  */}
+                {/* The 'initial' prop sets the initial state of the animation (85vw to the left of the normal position),  */}
                 {/* and 'animate' prop sets the final state of the animation (back to the normal position). */}
                 <motion.h1
-                    initial={{x:'-70vw'}}
+                    initial={{x:'-80vw'}}
                     animate={{
                         x:0, 
                         transition: {
@@ -32,9 +32,9 @@ const Home = () => {
                 >Web Design Showcase</motion.h1>
 
                 {/* Similar to the above, but this time an h2 tag is animated.  */}
-                {/* The h2 tag starts from 70vw to the right of the normal position. */}
+                {/* The h2 tag starts from 85vw to the right of the normal position. */}
                 <motion.h2 class="white"
-                    initial={{x:'70vw'}}
+                    initial={{x:'85vw'}}
                     animate={{
                         x:0, 
                         transition: {
@@ -48,9 +48,9 @@ const Home = () => {
                 
                 {/* A Link component from 'react-router-dom' creates a link to the '/Portfolio' page. */}
                 <Link to="/Portfolio" >
-                    {/* A paragraph tag is animated with 'motion' from 'framer-motion'. The paragraph starts from 70vw to the left of the normal position. */}
+                    {/* A paragraph tag is animated with 'motion' from 'framer-motion'. The paragraph starts from 85vw to the left of the normal position. */}
                     <motion.p class="cta bold uppercase white"
-                        initial={{x: '-70vw'}}
+                        initial={{x: '-80vw'}}
                         animate={{
                             x: 0, 
                             transition: {

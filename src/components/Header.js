@@ -78,10 +78,10 @@ const Header = () => {
             <label for="nav__toggle" className="nav__toggle-label"><span></span></label>
             <nav className="nav__phone">
                 <ul>
-                    <li><a href="#home" className="bold uppercase white">Home</a></li>
-                    <li><a href="#about" className="bold uppercase white">About</a></li>
-                    <li><a href="#portfolio" className="bold uppercase white">Portfolio</a></li>
-                    <li><a href="#contact" className="bold uppercase white">Contact</a></li>
+                    <li><NavLink to="/" className="bold uppercase white">Home<div className="underline"></div></NavLink></li>
+                    <li><NavLink to="/About" className="bold uppercase white">About<div className="underline"></div></NavLink></li>
+                    <li><NavLink to="/Portfolio" className="bold uppercase white">Portfolio<div className="underline"></div></NavLink></li>
+                    <li><NavLink to="/Contact" className="bold uppercase white">Contact<div className="underline"></div></NavLink></li>
                 </ul>
             </nav>
             <h1 className="white">Welcome</h1>
