@@ -2,28 +2,29 @@ import React from 'react'
 
 // Import Headshot image for use in the component
 import Headshot from '../assets/headshot.jpeg'
+
 const About = () => {
     return (
-        <section id="about" class="about center">
+        <section id="about" className="about center">
             {/* Place the imported Headshot image as a source with alt attribute */}
             <img src={Headshot} alt="Profile Headshot"
-                class="headshot" />
+                className="headshot" />
             {/* Add a header element with the user's name and necessary styling classes */}
-            <h2 class="bold uppercase">Jane Doe</h2>
+            <h2 className="bold uppercase">Jane Doe</h2>
             {/* Create a container for the "about_info" content */}
-            <div class="about_info">
+            <div className="about_info">
                 {/* Create the first info-card element with a class */}
-                <div class="about_info-card">
+                <div className="about_info-card">
                     {/* Create the heading for the first info-card */}
-                    <div class="about_info-card--heading">
+                    <div className="about_info-card--heading">
                         {/* Add a number for the first section */}
                         <h3>01</h3>
                         {/* Add a header element for the first section title */}
                         {/* and apply a style class "white" for text color */}
-                        <h3 class="white">Background</h3>
+                        <h3 className="white">Background</h3>
                     </div>
                     {/* Create a container for the first info-card's text content */}
-                    <div class="about_info-card--text">
+                    <div className="about_info-card--text">
                         {/* Add a paragraph element with sample text */}
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipiscing elit varius auctor tellus, massa eu tempus
@@ -33,17 +34,17 @@ const About = () => {
                     </div>
                 </div>
                 {/* Create the second info-card element with a class */}
-                <div class="about_info-card">
+                <div className="about_info-card">
                     {/* Create the heading for the second info-card */}
-                    <div class="about_info-card--heading">
+                    <div className="about_info-card--heading">
                         {/* Add a number for the second section */}
                         <h3>02</h3>
                         {/* Add a header element for the second section title */}
                         {/* and apply a style class "white" for text color */}
-                        <h3 class="white">Current</h3>
+                        <h3 className="white">Current</h3>
                     </div>
                     {/* Create a container for the second info-card's text content */}
-                    <div class="about_info-card--text">
+                    <div className="about_info-card--text">
                         {/* Add a paragraph element with sample text */}
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipiscing elit varius auctor tellus, massa eu tempus
@@ -53,17 +54,17 @@ const About = () => {
                     </div>
                 </div>
                 {/* Create the third info-card element with a class */}
-                <div class="about_info-card">
+                <div className="about_info-card">
                     {/* Create the heading for the third info-card */}
-                    <div class="about_info-card--heading">
+                    <div className="about_info-card--heading">
                         {/* Add a number for the third section */}
                         <h3>03</h3>
                         {/* Add a header element for the third section title */}
                         {/* and apply a style class "white" for text color */}
-                        <h3 class="white">Outlook</h3>
+                        <h3 className="white">Outlook</h3>
                     </div>
                     {/* Create a container for the third info-card's text content */}
-                    <div class="about_info-card--text">
+                    <div className="about_info-card--text">
                         {/* Add a paragraph element with sample text */}
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipiscing elit varius auctor tellus, massa eu tempus
@@ -74,7 +75,7 @@ const About = () => {
                 </div>
             </div>
             {/* Add a flex-spacer column to separate content blocks */}
-            <div class="flex-spacer-column"></div>
+            <div className="flex-spacer-column"></div>
             {/* Create an unordered list to hold user's social media links */}
             <ul>
                 {/* Add a list item with an anchor link to the user's Facebook profile */}

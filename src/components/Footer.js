@@ -2,7 +2,7 @@ import React from 'react';
 
 // Import 'motion' from framer-motion, a library for animations in React applications
 import { motion } from 'framer-motion';
-
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     
@@ -10,7 +10,7 @@ const Footer = () => {
         // The motion.footer component is an animated component from framer-motion that acts as a footer
         // The 'initial', 'animate', and 'transition' properties are responsible for defining the
         // animation and its behavior
-        <motion.footer class="center"
+        <motion.footer className="center"
             initial={{ y: 300 }} // The initial CSS properties, setting the initial y-axis position to 300 pixels below its final position
             animate={{ y: 0 }} // The animate properties, setting the final y-axis position to 0
             transition={{ type: 'spring', bounce: .1 }} // The transition properties, using a spring animation with bounce strength of 0.1
@@ -30,7 +30,7 @@ const Footer = () => {
                     }
                 }}
             >
-                 <a href="#" class="white"> 
+                 <a href="#" className="white"> 
                      Terms of Use
                 </a>
             </motion.span>
@@ -51,7 +51,7 @@ const Footer = () => {
         }
     }}
 >
-     <a href="#" class="white"> 
+     <a href="#" className="white"> 
          Privacy Policy
     </a>
     </motion.span>
@@ -69,9 +69,9 @@ const Footer = () => {
                     }
                 }}
             >
-                 <a href="#" class="white"> 
+                 <Link to="/contact" className="white"> 
                      Contact
-                </a>
+                </Link>
             </motion.span>
         </motion.footer>
     )

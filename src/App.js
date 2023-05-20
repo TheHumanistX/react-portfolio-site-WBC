@@ -18,7 +18,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     
-    // Main container div which uses a CSS class 'flex-container' for styling
+    
     <div>
       
       {/* Render the Header component at the top of the app */}
@@ -39,7 +39,7 @@ function App() {
         <Route exact path="/Contact" element={<Contact />} />
       </Routes>
 
-      {/* Render the Footer component at the bottom of the app */}
+      
       <Footer />
     </div>
   );

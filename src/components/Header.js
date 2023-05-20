@@ -74,8 +74,20 @@ const Header = () => {
                 </motion.li>
             </ul>
           </nav>
+          {/* 
+          Begin smallscreen navbar that will show up when the screen shrinks down past a certain size. 
+          Everything below this line is hidden until the page width is below 500px.
+          At that point, the above nav element is set to `display: none` and this below is made visible
+          */}
+          {/* 
+          Checkbox is used to drop or raise the menu.  The input and label have matching 'id' (input) and 'for' (label) which means
+          the label can be clicked to check or uncheck the checkbox.  This means we can hide the checkbox itself and style the label
+          to be a 'hamburger' dropdown menu label. When that is clicked, the checkbox is checked and the menu drops down. WHen the label
+          is clicked again, the checkbox (which is hidden) is unchecked, and the menu raises back up.
+          */}
           <input type="checkbox" id="nav__toggle" className="nav__toggle" />
-            <label for="nav__toggle" className="nav__toggle-label"><span></span></label>
+            <label htmlFor="nav__toggle" className="nav__toggle-label"><span></span></label>
+            {/* This piece is the same as above, just without all the extra framer motion animations */}
             <nav className="nav__phone">
                 <ul>
                     <li><NavLink to="/" className="bold uppercase white">Home<div className="underline"></div></NavLink></li>
@@ -84,11 +96,11 @@ const Header = () => {
                     <li><NavLink to="/Contact" className="bold uppercase white">Contact<div className="underline"></div></NavLink></li>
                 </ul>
             </nav>
+            {/* Heading that sits to the right of the menu to fill empty space. */}
             <h1 className="white">Welcome</h1>
-    </motion.header> // This closing tag denotes the end of the motion.header element.
+    </motion.header>
   )
 }
 
-// This line exports the Header component as a default export, which allows it to be imported in other files using a simplified syntax.
 export default Header;
 
